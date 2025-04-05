@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "levaltru.dropping_leaves.mixins",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"LeavesBlockMixin",
+		"NastyFallingBlockMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

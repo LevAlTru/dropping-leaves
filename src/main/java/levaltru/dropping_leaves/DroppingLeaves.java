@@ -1,11 +1,15 @@
-package com.example;
+package levaltru.dropping_leaves;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
+import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.world.GameRules;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ExampleMod implements ModInitializer {
+public class DroppingLeaves implements ModInitializer {
 	public static final String MOD_ID = "modid";
 
 	// This logger is used to write text to the console and the log file.
@@ -13,12 +17,19 @@ public class ExampleMod implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+	public static final GameRules.Key<GameRules.BooleanRule> SHOULD_LEAVES_FALL = GameRuleRegistry.register("droppingLeaves$shouldLeavesFall", GameRules.Category.DROPS, GameRuleFactory.createBooleanRule(true));
+
 	@Override
 	public void onInitialize() {
+
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
+	}
+
+	public static boolean shouldLeavesFall(ServerWorld world) {
+		return world.getGameRules().getBoolean(SHOULD_LEAVES_FALL);
 	}
 }
