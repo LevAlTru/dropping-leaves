@@ -5,8 +5,26 @@
 
 It makes the leaves drop (or fall) instead of fading in the air.<br>
 It's fully server side.<br>
-Also adds a gamerule if you want to turn off the mod without restarting the server.<br>
+Also adds a gamerule if you want to turn off the mod without restarting the server.
+
 <br>
+
+## Q&A
+
+<details>
+<summary>Does it work with other mods?</summary>
+It should, but if it does not, you can always report it on Github
+</details>
+<details>
+<summary>Will it be available for other modloaders and versions?</summary>
+I am lazy to port for the other modloaders, but i do want to port it to newer version eventually.<br>
+  Also, you can always try to use outdated version for newer or older versions of Minecraft, but it might be buggy.
+</details>
+
+
+
+<br>
+
 ## Gallery
 Heavy gif:<br>
 ![trees_falling_down_at_the_party-exportsss](https://github.com/user-attachments/assets/f20975d4-a2c6-4df5-8f99-1fa03a7f4f51)<br>
