@@ -5,7 +5,7 @@
 
 It makes the leaves drop (or fall) instead of fading in the air.<br>
 It's fully server side.<br>
-Also adds a gamerule if you want to turn off the mod without restarting the server.
+Also adds "droppingLeaves$shouldLeavesFall" gamerule if you want to turn off the mod without restarting the server.
 
 <br>
 
