@@ -18,7 +18,6 @@ It should, but if it does not, you can always report it on Github
 <details>
 <summary>Will it be available for other modloaders and versions?</summary>
 I am lazy to port for the other modloaders, but i do want to port it to newer version eventually.<br>
-  Also, you can always try to use outdated version for newer or older versions of Minecraft, but it might be buggy.
 </details>
 
 
