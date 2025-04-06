@@ -1,5 +1,5 @@
 # Dropping Leaves
-[Modrinth download](https://modrinth.com/project/dropping-leaves)
+[Github](https://github.com/LevAlTru/dropping_leaves) | [Modrinth](https://modrinth.com/mod/dropping-leaves)
 
 ## What does it do?
 
