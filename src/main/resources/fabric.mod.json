@@ -5,13 +5,12 @@
 	"name": "Dropping Leaves",
 	"description": "A server side mod which makes leaves falling upon tree destruction",
 	"authors": [
-		"Me!"
+		"LevAlTru"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/LevAlTru/dropping_leaves"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/dropping_leaves/icon.png",
 	"environment": "*",
 	"entrypoints": {
