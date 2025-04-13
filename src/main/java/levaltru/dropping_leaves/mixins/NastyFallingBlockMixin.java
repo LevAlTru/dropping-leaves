@@ -47,7 +47,7 @@ public abstract class NastyFallingBlockMixin extends Entity implements IsDroppin
 
     @Override
     public ItemEntity dropItem(ItemConvertible item) {
-        if (world instanceof ServerWorld serverWorld) {
+        if (getWorld() instanceof ServerWorld serverWorld) {
             if (isDroppingLeaves) {
                 List<ItemStack> droppedStacks = Block.getDroppedStacks(getBlockState(), serverWorld, getBlockPos(), null);
                 if (!droppedStacks.isEmpty()) {
@@ -75,7 +75,7 @@ public abstract class NastyFallingBlockMixin extends Entity implements IsDroppin
     private void droppingLeaves$placeSoundsForLandingLeaves(CallbackInfo ci, @Local(ordinal = 0) BlockPos blockPos) {
         if (isDroppingLeaves && timeFalling > 3f) {
             float v = ((MathHelper.clamp(timeFalling, MIN, MAX) - MIN) / (MAX - MIN)) * 0.8f;
-            if (v > random.nextFloat()) world.breakBlock(blockPos, true);
+            if (v > random.nextFloat()) getWorld().breakBlock(blockPos, true);
         }
     }
 

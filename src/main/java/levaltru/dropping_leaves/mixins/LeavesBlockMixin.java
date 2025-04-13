@@ -42,7 +42,8 @@ public abstract class LeavesBlockMixin extends Block implements Waterloggable {
         if (!DroppingLeaves.shouldLeavesFall(world)) return;
         if (shouldDecay(state)) {
             if (random.nextFloat() < 0.33f) fallIfPossible(state, pos, world);       // v v v
-            else world.createAndScheduleBlockTick(pos, asBlock(), 1);         // make leaves fall not at once, so it'd look prettier.
+//            else world.createAndScheduleBlockTick(pos, asBlock(), 1);         // make leaves fall not at once, so it'd look prettier.
+            else world.scheduleBlockTick(pos, asBlock(), 1);
         }
     }
 
