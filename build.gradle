@@ -23,7 +23,7 @@ loom {
 //	splitEnvironmentSourceSets()
 
 	mods {
-		"modid" {
+		"dropping_leaves" {
 			sourceSet sourceSets.main
 //			sourceSet sourceSets.client
 		}
@@ -51,7 +51,7 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 17
+	it.options.release = 21
 }
 
 java {
@@ -60,8 +60,8 @@ java {
 	// If you remove this line, sources will not be generated.
 	withSourcesJar()
 
-	sourceCompatibility = JavaVersion.VERSION_17
-	targetCompatibility = JavaVersion.VERSION_17
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
 }
 
 jar {
@@ -99,8 +99,9 @@ modrinth {
 	projectId = 'dropping-leaves' // The ID of your Modrinth project. Slugs will not work.
 //	versionNumber = '1.0.1+1.20.1' // The (preferably SemVer) version of the mod. If not specified, it'll use the `version` declaration
 //	versionName = 'My awesome release' // The version title. If not specified, it'll use the version number
+	changelog = "- port to 1.21 & 1.21.1"
 	uploadFile = remapJar // Tells Minotaur to use the remapped jar
-	gameVersions = ['1.20.1'] // An array of game versions the version supports
+	gameVersions = ['1.21', '1.21.1'] // An array of game versions the version supports
 	loaders = ['fabric', 'quilt'] // Self-explanatory.
 	dependencies = [
 			new ModDependency('fabric-api', 'required') // Creates a new required dependency on Fabric API
