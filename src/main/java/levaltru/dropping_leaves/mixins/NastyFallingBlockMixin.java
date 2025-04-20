@@ -46,19 +46,16 @@ public abstract class NastyFallingBlockMixin extends Entity implements IsDroppin
     public int timeFalling;
 
     @Override
-    public ItemEntity dropItem(ItemConvertible item) {
-        if (getWorld() instanceof ServerWorld serverWorld) {
-            if (isDroppingLeaves) {
-                List<ItemStack> droppedStacks = Block.getDroppedStacks(getBlockState(), serverWorld, getBlockPos(), null);
-                if (!droppedStacks.isEmpty()) {
-                    for (int i = 0; i < droppedStacks.size() - 1; i++) super.dropItem(droppedStacks.get(i).getItem());
-                    return super.dropItem(droppedStacks.get(droppedStacks.size() - 1).getItem());
-                }
-                return null;
+    public ItemEntity dropItem(ServerWorld serverWorld, ItemConvertible item) {
+        if (isDroppingLeaves) {
+            List<ItemStack> droppedStacks = Block.getDroppedStacks(getBlockState(), serverWorld, getBlockPos(), null);
+            if (!droppedStacks.isEmpty()) {
+                for (int i = 0; i < droppedStacks.size() - 1; i++) super.dropItem(serverWorld, droppedStacks.get(i).getItem());
+                return super.dropItem(serverWorld, droppedStacks.get(droppedStacks.size() - 1).getItem());
             }
-            return super.dropItem(item);
+            return null;
         }
-        return super.dropItem(item);
+        return super.dropItem(serverWorld, item);
     }
 
     @Inject(
