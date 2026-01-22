@@ -38,7 +38,7 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 	
 }
 
@@ -90,20 +90,20 @@ publishing {
 	}
 }
 
-import com.modrinth.minotaur.dependencies.ModDependency
+//import com.modrinth.minotaur.dependencies.ModDependency
 
-modrinth {
-	token = System.getenv("MODRINTH_TOKEN") // Please use an environment variable for this! The default is `$MODRINTH_TOKEN`.
-	// hack me for it bich >:3
-
-	projectId = 'dropping-leaves' // The ID of your Modrinth project. Slugs will not work.
-//	versionNumber = '1.0.1+1.20.1' // The (preferably SemVer) version of the mod. If not specified, it'll use the `version` declaration
-//	versionName = 'My awesome release' // The version title. If not specified, it'll use the version number
-	changelog = "- port to 1.21.2 - 1.21.4"
-	uploadFile = remapJar // Tells Minotaur to use the remapped jar
-	gameVersions = ['1.21.2', '1.21.3', '1.21.4'] // An array of game versions the version supports
-	loaders = ['fabric', 'quilt'] // Self-explanatory.
-	dependencies = [
-			new ModDependency('fabric-api', 'required') // Creates a new required dependency on Fabric API
-	]
-}
+//modrinth {
+//	token = System.getenv("MODRINTH_TOKEN") // Please use an environment variable for this! The default is `$MODRINTH_TOKEN`.
+//	// hack me for it bich >:3
+//
+//	projectId = 'dropping-leaves' // The ID of your Modrinth project. Slugs will not work.
+////	versionNumber = '1.0.1+1.20.1' // The (preferably SemVer) version of the mod. If not specified, it'll use the `version` declaration
+////	versionName = 'My awesome release' // The version title. If not specified, it'll use the version number
+//	changelog = "- port to 1.21.2 - 1.21.4"
+//	uploadFile = remapJar // Tells Minotaur to use the remapped jar
+//	gameVersions = ['1.21.2', '1.21.3', '1.21.4'] // An array of game versions the version supports
+//	loaders = ['fabric', 'quilt'] // Self-explanatory.
+//	dependencies = [
+//			new ModDependency('fabric-api', 'required') // Creates a new required dependency on Fabric API
+//	]
+//}
