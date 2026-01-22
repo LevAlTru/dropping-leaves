@@ -12,6 +12,8 @@ import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.storage.ReadView;
+import net.minecraft.storage.WriteView;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -86,13 +88,13 @@ public abstract class NastyFallingBlockMixin extends Entity implements IsDroppin
         return isDroppingLeaves;
     }
 
-    @Inject(method = "readCustomDataFromNbt", at = @At("HEAD"))
-    private void droppingLeaves$addVariableToNbtReading(NbtCompound nbt, CallbackInfo ci) {
-        isDroppingLeaves = nbt.getBoolean("droppingLeaves_isDroppingLeaves");
+    @Inject(method = "readCustomData", at = @At("HEAD"))
+    private void droppingLeaves$addVariableToNbtReading(ReadView view, CallbackInfo ci) {
+        isDroppingLeaves = view.getBoolean("droppingLeaves_isDroppingLeaves", false);
     }
 
-    @Inject(method = "writeCustomDataToNbt", at = @At("HEAD"))
-    private void droppingLeaves$addVariableToNbtWriting(NbtCompound nbt, CallbackInfo ci) {
-        nbt.putBoolean("droppingLeaves_isDroppingLeaves", isDroppingLeaves);
+    @Inject(method = "writeCustomData", at = @At("HEAD"))
+    private void droppingLeaves$addVariableToNbtWriting(WriteView view, CallbackInfo ci) {
+        view.putBoolean("droppingLeaves_isDroppingLeaves", isDroppingLeaves);
     }
 }
